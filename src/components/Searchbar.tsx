@@ -20,7 +20,7 @@ export const Searchbar = () => {
 					<Input
 						type="text"
 						placeholder="Search movies..."
-						className="bg-transparent outline-none h-fit w-full p-2 lg:max-w-64 text-white"
+						className="bg-neutral-900 outline-none h-fit w-full p-2 lg:max-w-64 text-white"
 						autoFocus
 					/>
 					<X className="cursor-pointer" onClick={() => setIsOpen(false)} />
