@@ -8,6 +8,10 @@ export interface MediaBase {
   backdrop_path: string | null;
   genre_ids: number[];
   media_type: "tv" | "movie";
+  release_date?: string;
+  original_title?: string;
+  first_air_date?: string;
+  original_name?: string;
 }
 
 export interface Movie extends MediaBase {
