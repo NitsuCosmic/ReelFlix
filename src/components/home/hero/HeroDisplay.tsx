@@ -18,10 +18,10 @@ export const HeroDisplay = () => {
 		: null;
 
 	return (
-		<div className="min-h-svh">
+		<div className="h-svh">
 			{media.length > 0 && (
 				<div
-					className="min-h-svh bg-cover bg-center bg-no-repeat bg-[] max-h-svh"
+					className="h-svh bg-cover bg-center bg-no-repeat max-h-svh"
 					style={{
 						backgroundImage: `linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10)),
     url(${backdropUrl})`,

@@ -6,5 +6,11 @@ export const ENDPOINTS = {
   },
   trending: {
     all: "trending/all/week"
+  },
+  movies: {
+    now_playing: "movie/now_playing",
+    popular: "movie/popular",
+    top_rated: "movie/top_rated",
+    upcoming: "movie/upcoming"
   }
 }
