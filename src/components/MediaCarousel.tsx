@@ -10,13 +10,13 @@ import {
 import { Skeleton } from "./ui/skeleton";
 type MediaCarouselProps = {
 	title: string;
-	media: Media[];
+	mediaList: Media[];
 	isLoading: boolean;
 };
 
 export const MediaCarousel = ({
 	title,
-	media,
+	mediaList,
 	isLoading,
 }: MediaCarouselProps) => {
 	if (isLoading) return <CarouselSkeleton />;
@@ -34,7 +34,7 @@ export const MediaCarousel = ({
 				}}
 			>
 				<CarouselContent className="flex -ml-0">
-					{media.map((media, index) => (
+					{mediaList.map((media, index) => (
 						<CarouselItem
 							key={index}
 							className={`basis-1/3 md:basis-1/4 lg:basis-1/5 p-0 mr-4 cursor-pointer`}
@@ -54,7 +54,7 @@ export const MediaCarousel = ({
 
 const CarouselSkeleton = () => (
 	<div className="p-2 space-y-4 overflow-hidden">
-		<Skeleton className="h-6 w-40 mb-4" />
+		<Skeleton className="h-6 w-40 mb-4 bg-neutral-800" />
 		<Carousel opts={{ align: "start" }}>
 			<CarouselContent className="flex gap-2 -m-0">
 				{[...Array(20)].map((_, i) => (
@@ -64,7 +64,7 @@ const CarouselSkeleton = () => (
 					>
 						<Skeleton
 							key={i}
-							className=" h-42 w-32 rounded-lg lg:w-72 lg:h-46"
+							className=" h-42 w-32 rounded-lg lg:w-72 lg:h-46 bg-neutral-800"
 						/>
 					</CarouselItem>
 				))}

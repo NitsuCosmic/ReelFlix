@@ -9,36 +9,62 @@ import {
 import { HeroMediaCard } from "./HeroMediaCard";
 
 type HeroCarouselProps = {
-	media: Media[];
+	mediaList: Media[];
 	currentIndex: number;
 	setCurrentIndex: (index: number) => void;
 };
 
 export const HeroCarousel = ({
-	media,
+	mediaList,
 	currentIndex,
 	setCurrentIndex,
 }: HeroCarouselProps) => {
+	const getCircularIndex = (
+		current: number,
+		delta: number,
+		max: number
+	): number => {
+		return (current + delta + max) % max;
+	};
+
+	const handlePrev = () => {
+		setCurrentIndex(getCircularIndex(currentIndex, -1, mediaList.length));
+	};
+
+	const handleNext = () => {
+		setCurrentIndex(getCircularIndex(currentIndex, 1, mediaList.length));
+	};
+
 	return (
 		<Carousel
 			className="relative flex gap-2"
-			opts={{ align: "start", loop: true }}
+			opts={{
+				align: "start",
+				loop: true,
+				skipSnaps: true,
+			}}
 		>
+			<div className="hidden lg:flex">
+				<div onClick={handlePrev}>
+					<CarouselPrevious className="cursor-pointer text-neutral-950" />
+				</div>
+				<div onClick={handleNext}>
+					<CarouselNext className="cursor-pointer text-neutral-950" />
+				</div>
+			</div>
 			<CarouselContent className="flex -ml-0">
-				{media.map((media, index) => (
+				{mediaList.map((media, index) => (
 					<CarouselItem
 						key={media.id}
-						className={`basis-1/3 md:basis-1/4 lg:basis-1/8 2xl:basis-1/10 p-0 mr-4 cursor-pointer`}
+						className={`basis-1/3 md:basis-1/4 lg:basis-1/8 2xl:basis-1/10 p-0 mr-4 cursor-pointer border-2 border-transparent ${
+							currentIndex === index ? "border-neutral-100" : ""
+						} rounded-md overflow-hidden`}
 						onClick={() => setCurrentIndex(index)}
 					>
 						<HeroMediaCard media={media} isSelected={currentIndex === index} />
 					</CarouselItem>
 				))}
 			</CarouselContent>
-			<div className="hidden lg:flex">
-				<CarouselPrevious className="cursor-pointer text-neutral-950" />
-				<CarouselNext className="cursor-pointer text-neutral-950" />
-			</div>
 		</Carousel>
 	);
 };

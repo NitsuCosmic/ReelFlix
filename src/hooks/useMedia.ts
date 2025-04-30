@@ -4,7 +4,7 @@ import { Media } from "@/types/media";
 import { useEffect, useState } from "react";
 
 export const useMedia = () => {
-  const [media, setMedia] = useState<Media[]>([]);
+  const [mediaList, setMediaList] = useState<Media[]>([]);
 
   const fetchMedia = async () => {
     try {
@@ -13,7 +13,7 @@ export const useMedia = () => {
         OPTIONS
       );
       const data = await response.json();
-      setMedia(data.results);
+      setMediaList(data.results);
     } catch (err) {
       console.error("Failed to fetch media:", err);
     }
@@ -23,5 +23,5 @@ export const useMedia = () => {
     fetchMedia();
   }, []);
 
-  return { media };
+  return { mediaList };
 };
