@@ -35,11 +35,6 @@ export function HomePage() {
 					title="Popular Movies"
 				/>
 				<MediaCarousel
-					mediaList={topRated}
-					isLoading={isLoadingTopRated}
-					title="Top Rated Movies"
-				/>
-				<MediaCarousel
 					mediaList={nowPlaying}
 					isLoading={isLoadingNowPlaying}
 					title="Now Playing"

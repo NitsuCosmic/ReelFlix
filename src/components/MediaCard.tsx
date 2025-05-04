@@ -33,13 +33,14 @@ export const MediaCard = ({ media }: MediaCardProps) => {
 					<picture>
 						<source
 							media="(min-width:1024px)"
-							srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes[3]}${media.backdrop_path}`}
+							srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${media.backdrop_path}`}
 							title={media.title || media.name}
 						/>
 						<img
-							src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes[3]}${media.poster_path}`}
+							src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${media.poster_path}`}
 							alt={media.title || media.name}
 							title={media.title || media.name}
+							loading="lazy"
 						/>
 					</picture>
 					<div className="hidden absolute inset-0 lg:flex items-end p-2 font-semibold text-neutral-100">

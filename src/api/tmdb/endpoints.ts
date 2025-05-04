@@ -11,6 +11,8 @@ export const ENDPOINTS = {
     now_playing: "movie/now_playing",
     popular: "movie/popular",
     top_rated: "movie/top_rated",
-    upcoming: "movie/upcoming"
+    upcoming: "movie/upcoming",
+    details: "movie",
+
   }
 }

@@ -10,15 +10,16 @@ type HeroMediaCardProps = {
 export const HeroMediaCard = ({ media, isSelected }: HeroMediaCardProps) => {
 	return (
 		<Card
-			className={`p-0 overflow-hidden bg-transparent border-none rounded-md hover:brightness-100 ${
+			className={`h-full p-0 overflow-hidden bg-transparent border-none rounded-md hover:brightness-100 ${
 				isSelected ? "brightness-100" : "brightness-50"
 			} transition-all select-none`}
 		>
-			<CardContent className="p-0">
+			<CardContent className="flex h-full p-0">
 				<img
-					src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes[3]}${media.poster_path}`}
+					src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${media.poster_path}`}
 					alt={media.title || media.name}
 					title={media.title || media.name}
+					className="object-cover"
 				/>
 			</CardContent>
 		</Card>

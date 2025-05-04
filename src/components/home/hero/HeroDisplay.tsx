@@ -1,9 +1,10 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { useCarousel } from "@/hooks/useCarousel";
 import { useMedia } from "@/hooks/useMedia";
 import { TMDB_IMAGE_CONFIG } from "@/lib/constants/images";
 import { getMediaGenre } from "@/lib/utils/getMedia";
-import { PlayIcon } from "lucide-react";
+import { InfoIcon } from "lucide-react";
 import { NavLink } from "react-router";
 import { HeroCarousel } from "./HeroCarousel";
 
@@ -15,7 +16,7 @@ export const HeroDisplay = () => {
 
 	const currentMedia = mediaList[currentIndex];
 	const backdropUrl = currentMedia.backdrop_path
-		? `${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes[3]}${currentMedia.backdrop_path}`
+		? `${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${currentMedia.backdrop_path}`
 		: null;
 
 	return (
@@ -47,10 +48,13 @@ export const HeroDisplay = () => {
 							}/${mediaList[currentIndex].id}`}
 							className={"w-min"}
 						>
-							<button className="flex items-center justify-center gap-2 cursor-pointer w-fit px-4 py-2 rounded-full border">
-								<PlayIcon />
-								Play
-							</button>
+							<Button
+								variant={"secondary"}
+								className="flex items-center justify-center gap-2 cursor-pointer w-fit px-4 py-2 rounded-full "
+							>
+								<InfoIcon />
+								Details
+							</Button>
 						</NavLink>
 						<HeroCarousel
 							mediaList={mediaList}
