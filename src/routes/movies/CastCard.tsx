@@ -9,7 +9,7 @@ export const CastCard = ({ person }) => {
 				title={person.name}
 				loading="lazy"
 			/>
-			<div className="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-b from-transparent via-black/60 to-black/90">
+			<div className="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-b from-transparent via-black/60 to-black/80">
 				<h2 className="line-clamp-1 font-semibold text-lg text-shadow-md/30">
 					{person.character || "Unkown"}
 				</h2>

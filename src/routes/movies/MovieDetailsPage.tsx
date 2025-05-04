@@ -1,5 +1,6 @@
 import { useMovieDetails } from "@/api/tmdb/useMovieDetails";
 import { LoadingPage } from "@/components/LoadingPage";
+import { MediaGallery } from "@/components/MediaGallery";
 import { TMDB_IMAGE_CONFIG } from "@/lib/constants/images";
 import { useParams } from "react-router";
 import { MovieCast } from "./MovieCast";
@@ -88,6 +89,10 @@ export const MovieDetailsPage = () => {
 					</section>
 					<ProductionCompanies companies={data.details.production_companies} />
 					<MovieCast credits={data.credits} />
+					<div className="space-y-2">
+						<h3 className="font-semibold text-3xl">You might like...</h3>
+						<MediaGallery mediaList={data.recommendations.results} />
+					</div>
 				</div>
 			</div>
 		</div>
