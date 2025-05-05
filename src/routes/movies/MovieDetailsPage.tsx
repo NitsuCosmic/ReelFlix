@@ -1,6 +1,7 @@
 import { useMovieDetails } from "@/api/tmdb/useMovieDetails";
 import { LoadingPage } from "@/components/LoadingPage";
 import { MediaGallery } from "@/components/MediaGallery";
+import { PageBackground } from "@/components/shared/PageBackground";
 import { TMDB_IMAGE_CONFIG } from "@/lib/constants/images";
 import { useParams } from "react-router";
 import { MovieCast } from "./MovieCast";
@@ -20,23 +21,11 @@ export const MovieDetailsPage = () => {
 
 	return (
 		<div className="relative font-raleway">
-			<div className="sticky top-0 z-0 w-full h-svh overflow-hidden brightness-[0.25]">
-				<picture>
-					<source
-						srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${data.details.backdrop_path}`}
-						media="(min-width: 1024px)"
-					/>
-					<img
-						src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${data.details.poster_path}`}
-						alt={data.details.title}
-						className="w-full h-full object-cover"
-					/>
-				</picture>
-			</div>
+			<PageBackground data={data.details} />
 
-			<div className="relative z-10 -mt-[100svh] backdrop-blur-2xl">
+			<div className="relative z-10">
 				<MovieDetailsHeader data={data.details} />
-				<div className="space-y-10 text-neutral-100 p-2 lg:p-16 ">
+				<div className="space-y-10 text-neutral-100 p-2 lg:p-16 relative backdrop-blur-2xl backdrop-brightness-25">
 					<section className="flex flex-col gap-y-4 lg:divide-x-[1px] divide-neutral-400 lg:flex-row  lg:space-x-4 text-white rounded-xl p-2 lg:p-0 max-w-6xl mx-auto my-10">
 						{/* Poster */}
 						<div className="w-full lg:w-1/3 flex-shrink-0 lg:pr-4">

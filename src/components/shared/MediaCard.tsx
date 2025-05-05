@@ -28,7 +28,7 @@ export const MediaCard = ({ children, media }: MediaCardProps) => {
 			<Card className="group relative p-0 overflow-hidden bg-transparent border-none shadow-none rounded-md lg:rounded-none hover:brightness-100 select-none">
 				<CardContent className="p-0">
 					<NavLink
-						to={`${media.media_type === "tv" ? "series" : "movies"}/${
+						to={`/${media.media_type === "tv" ? "series" : "movies"}/${
 							media.id
 						}`}
 					>
@@ -135,13 +135,8 @@ MediaCard.Title = function MediaCardTitle() {
 	const { media } = useMediaCardContext();
 
 	return (
-		<NavLink
-			to={`/${media.media_type === "tv" ? "series" : "movies"}/${media.id}`}
-			className={"flex w-fit"}
-		>
-			<h3 className="text-neutral-100 font-semibold line-clamp-1 hover:underline">
-				{media.title || media.name}
-			</h3>
-		</NavLink>
+		<h3 className="text-neutral-100 font-semibold line-clamp-1 hover:underline">
+			{media.title || media.name}
+		</h3>
 	);
 };
