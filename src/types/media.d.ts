@@ -66,6 +66,8 @@ export interface MediaBase {
   media_type?: "movie" | "tv";
   original_language: string;
   origin_country?: string[];
+  release_date?: string
+  first_air_date?: string
   // Common optional fields
   adult?: boolean;
   tagline?: string;

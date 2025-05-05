@@ -1,3 +1,4 @@
+import { MediaCard } from "@/components/shared/MediaCard";
 import { Media } from "@/types/media";
 import {
 	Carousel,
@@ -6,7 +7,6 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "../../ui/carousel";
-import { HeroMediaCard } from "./HeroMediaCard";
 
 type HeroCarouselProps = {
 	mediaList: Media[];
@@ -61,7 +61,9 @@ export const HeroCarousel = ({
 						} rounded-md overflow-hidden`}
 						onClick={() => setCurrentIndex(index)}
 					>
-						<HeroMediaCard media={media} isSelected={currentIndex === index} />
+						<MediaCard media={media}>
+							<MediaCard.Poster></MediaCard.Poster>
+						</MediaCard>
 					</CarouselItem>
 				))}
 			</CarouselContent>

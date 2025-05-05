@@ -5,9 +5,6 @@ import { HeroDisplay } from "@/components/home/hero/HeroDisplay";
 import { MediaCarousel } from "@/components/MediaCarousel";
 
 export function HomePage() {
-	const { media: topRated, isLoading: isLoadingTopRated } = useGetMedia(
-		ENDPOINTS.movies.top_rated
-	);
 	const { media: upcoming, isLoading: isLoadingUpcoming } = useGetMedia(
 		ENDPOINTS.movies.upcoming
 	);

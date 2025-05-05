@@ -37,7 +37,7 @@ export const MovieDetailsPage = () => {
 			<div className="relative z-10 -mt-[100svh] backdrop-blur-2xl">
 				<MovieDetailsHeader data={data.details} />
 				<div className="space-y-10 text-neutral-100 p-2 lg:p-16 ">
-					<section className="flex flex-col gap-y-4 lg:divide-x-[1px] divide-neutral-400 md:flex-row  lg:space-x-4 text-white rounded-xl p-2 lg:p-0 max-w-6xl mx-auto my-10">
+					<section className="flex flex-col gap-y-4 lg:divide-x-[1px] divide-neutral-400 lg:flex-row  lg:space-x-4 text-white rounded-xl p-2 lg:p-0 max-w-6xl mx-auto my-10">
 						{/* Poster */}
 						<div className="w-full lg:w-1/3 flex-shrink-0 lg:pr-4">
 							<img

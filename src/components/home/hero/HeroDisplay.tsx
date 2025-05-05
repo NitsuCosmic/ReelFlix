@@ -1,5 +1,5 @@
+import { LinkButton } from "@/components/shared/LinkButton";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { useCarousel } from "@/hooks/useCarousel";
 import { useMedia } from "@/hooks/useMedia";
 import { TMDB_IMAGE_CONFIG } from "@/lib/constants/images";
@@ -34,7 +34,7 @@ export const HeroDisplay = () => {
 							{mediaList[currentIndex].title || mediaList[currentIndex].name}
 						</h1>
 						<div className="flex items-center gap-2 flex-wrap">
-							{mediaList[currentIndex].genre_ids.map((genre, index) => (
+							{mediaList[currentIndex].genre_ids?.map((genre, index) => (
 								<Badge key={index} className="px-2 text-sm">
 									{getMediaGenre(mediaList[currentIndex].media_type, genre)}
 								</Badge>
@@ -48,13 +48,10 @@ export const HeroDisplay = () => {
 							}/${mediaList[currentIndex].id}`}
 							className={"w-min"}
 						>
-							<Button
-								variant={"secondary"}
-								className="flex items-center justify-center gap-2 cursor-pointer w-fit px-4 py-2 rounded-full "
-							>
+							<LinkButton variant="primary">
 								<InfoIcon />
 								Details
-							</Button>
+							</LinkButton>
 						</NavLink>
 						<HeroCarousel
 							mediaList={mediaList}

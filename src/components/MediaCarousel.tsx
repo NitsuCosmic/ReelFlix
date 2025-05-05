@@ -1,5 +1,5 @@
 import { Media } from "@/types/media";
-import { MediaCard } from "./MediaCard";
+import { MediaCard } from "./shared/MediaCard";
 import {
 	Carousel,
 	CarouselContent,
@@ -37,9 +37,13 @@ export const MediaCarousel = ({
 					{mediaList.map((media, index) => (
 						<CarouselItem
 							key={index}
-							className={`basis-1/3 md:basis-1/4 lg:basis-1/5 p-0 mr-4 cursor-pointer`}
+							className={`basis-1/3 md:basis-1/4 lg:basis-1/4 2xl:basis-1/5 p-0 mr-4 cursor-pointer`}
 						>
-							<MediaCard media={media} />
+							<MediaCard media={media}>
+								<MediaCard.ResImage />
+								<MediaCard.AbsoluteInfo />
+								<MediaCard.HoverContent />
+							</MediaCard>
 						</CarouselItem>
 					))}
 				</CarouselContent>
