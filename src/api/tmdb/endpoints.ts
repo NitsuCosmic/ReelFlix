@@ -13,6 +13,8 @@ export const ENDPOINTS = {
     top_rated: "movie/top_rated",
     upcoming: "movie/upcoming",
     details: "movie",
-
+  },
+  series: {
+    details: "tv"
   }
 }

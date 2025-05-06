@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ExternalLinkIcon, PlayIcon } from "lucide-react";
 
-export const MovieDetailsHeader = ({ data }) => {
+export const MediaDetailsHeader = ({ data }) => {
 	return (
 		<div className="relative hidden md:inline">
 			<div className="min-h-screen flex flex-col justify-end py-3 lg:py-16 2xl:py-32 gap-4 lg:gap-6 2xl:gap-8 text-neutral-100 font-raleway px-2 lg:px-16">
@@ -13,8 +13,16 @@ export const MovieDetailsHeader = ({ data }) => {
 				</p>
 				<div className="flex flex-wrap divide-x-2 text-lg font-semibold text-shadow-md/50">
 					<span className="pr-4">{data.vote_average.toFixed(1)}/10</span>
-					<span className="px-4">{data.release_date?.slice(0, 4)}</span>
-					<span className="px-4">{data.runtime}min</span>
+					<span className="px-4">
+						{data.release_date?.slice(0, 4) || data.first_air_date?.slice(0, 4)}
+					</span>
+					{data.runtime && <span className="px-4">{data.runtime}min</span>}
+					{data.number_of_seasons && (
+						<span className="px-4">
+							{data.number_of_seasons}{" "}
+							{data.number_of_seasons > 1 ? "Seasons" : "Season"}
+						</span>
+					)}
 				</div>
 				<div className="flex items-center gap-2 flex-wrap">
 					{data.genres.map((genre, index) => (

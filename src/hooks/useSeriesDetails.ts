@@ -1,10 +1,10 @@
 import { MediaDetailsData } from "@/types/media"
 import { useEffect, useState } from "react"
-import { OPTIONS } from "./config"
-import { ENDPOINTS } from "./endpoints"
+import { OPTIONS } from "../api/tmdb/config"
+import { ENDPOINTS } from "../api/tmdb/endpoints"
 
 
-export const useMovieDetails = (id: string | undefined) => {
+export const useSeriesDetails = (id: string | undefined) => {
   const [data, setData] = useState<MediaDetailsData | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null);
@@ -15,12 +15,12 @@ export const useMovieDetails = (id: string | undefined) => {
       setError(null)
       try {
         const [detailsRes, creditsRes, videosRes, imagesRes, similarRes, recommendatiosRes] = await Promise.all([
-          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.movies.details}/${id}`, OPTIONS),
-          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.movies.details}/${id}/credits`, OPTIONS),
-          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.movies.details}/${id}/videos`, OPTIONS),
-          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.movies.details}/${id}/images`, OPTIONS),
-          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.movies.details}/${id}/similar`, OPTIONS),
-          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.movies.details}/${id}/recommendations`, OPTIONS),
+          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.series.details}/${id}`, OPTIONS),
+          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.series.details}/${id}/credits`, OPTIONS),
+          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.series.details}/${id}/videos`, OPTIONS),
+          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.series.details}/${id}/images`, OPTIONS),
+          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.series.details}/${id}/similar`, OPTIONS),
+          fetch(`${ENDPOINTS.base_url}${ENDPOINTS.series.details}/${id}/recommendations`, OPTIONS),
         ])
 
         const [details, credits, videos, images, similar, recommendations] = await Promise.all([

@@ -7,7 +7,7 @@ type PageBackgroundProps = {
 
 export const PageBackground = ({ data }: PageBackgroundProps) => {
 	return (
-		<div className="fixed z-0 mx-auto w-full h-screen overflow-hidden max-w-[1920px]">
+		<div className="fixed z-0 mx-auto w-full md:w-screen h-screen overflow-hidden max-w-[1920px]">
 			<picture>
 				<source
 					srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${data.backdrop_path}`}

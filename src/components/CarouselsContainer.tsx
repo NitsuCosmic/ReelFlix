@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 type CarouselContainerProps = {
-	children: ReactElement[];
+	children: ReactNode;
 };
 
 export const CarouselsContainer = ({ children }: CarouselContainerProps) => {

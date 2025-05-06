@@ -5,14 +5,14 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
-import { CastCard } from "./CastCard";
+import { CastCard } from "../../routes/movies/CastCard";
 
 type MovieCastProps = {
 	credits: object;
 };
 
-export const MovieCast = ({ credits }: MovieCastProps) => {
-	const directors = credits.crew.filter(
+export const MediaCast = ({ credits }: MovieCastProps) => {
+	const directors = credits.cast.filter(
 		(person) => person.known_for_department === "Directing"
 	);
 

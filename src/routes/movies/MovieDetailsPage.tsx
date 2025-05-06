@@ -1,12 +1,12 @@
-import { useMovieDetails } from "@/api/tmdb/useMovieDetails";
 import { LoadingPage } from "@/components/LoadingPage";
 import { MediaGallery } from "@/components/MediaGallery";
 import { PageBackground } from "@/components/shared/PageBackground";
+import { useMovieDetails } from "@/hooks/useMovieDetails";
 import { TMDB_IMAGE_CONFIG } from "@/lib/constants/images";
 import { ExternalLinkIcon, PlayIcon } from "lucide-react";
 import { useParams } from "react-router";
-import { MovieCast } from "./MovieCast";
-import { MovieDetailsHeader } from "./MovieDetailsHeader";
+import { MediaCast } from "../../components/shared/MediaCast";
+import { MediaDetailsHeader } from "./MediaDetailsHeader";
 import { ProductionCompanies } from "./ProductionCompanies";
 
 export const MovieDetailsPage = () => {
@@ -25,7 +25,7 @@ export const MovieDetailsPage = () => {
 			<PageBackground data={data.details} />
 
 			<div className="relative z-10">
-				<MovieDetailsHeader data={data.details} />
+				<MediaDetailsHeader data={data.details} />
 				<div className="space-y-10 text-neutral-100 p-2 lg:p-16 relative backdrop-blur-xl backdrop-brightness-40">
 					<section className="mt-16 lg:mt-0 flex flex-col gap-y-4 lg:divide-x-[1px] divide-neutral-400 lg:flex-row  lg:space-x-4 text-white rounded-xl p-2 lg:p-0 max-w-6xl mx-auto my-10">
 						{/* Poster */}
@@ -98,7 +98,7 @@ export const MovieDetailsPage = () => {
 						</div>
 					</section>
 					<ProductionCompanies companies={data.details.production_companies} />
-					<MovieCast credits={data.credits} />
+					<MediaCast credits={data.credits} />
 					<div className="space-y-2">
 						<h3 className="font-semibold text-3xl">You might like...</h3>
 						<MediaGallery mediaList={data.recommendations.results} />
