@@ -3,8 +3,8 @@ import { ExternalLinkIcon, PlayIcon } from "lucide-react";
 
 export const MovieDetailsHeader = ({ data }) => {
 	return (
-		<div className="h-svh">
-			<div className="min-h-svh flex flex-col justify-end py-3 lg:py-16 2xl:py-32 gap-4 lg:gap-6 2xl:gap-8 text-neutral-100 font-raleway px-2 lg:px-16">
+		<div className="relative hidden md:inline">
+			<div className="min-h-screen flex flex-col justify-end py-3 lg:py-16 2xl:py-32 gap-4 lg:gap-6 2xl:gap-8 text-neutral-100 font-raleway px-2 lg:px-16">
 				<h1 className="font-semibold text-4xl md:text-5xl text-shadow-md/50">
 					{data.title || data.name}
 				</h1>
@@ -14,13 +14,13 @@ export const MovieDetailsHeader = ({ data }) => {
 				<div className="flex flex-wrap divide-x-2 text-lg font-semibold text-shadow-md/50">
 					<span className="pr-4">{data.vote_average.toFixed(1)}/10</span>
 					<span className="px-4">{data.release_date?.slice(0, 4)}</span>
-					<span className="px-4">{data.runtime}m</span>
+					<span className="px-4">{data.runtime}min</span>
 				</div>
 				<div className="flex items-center gap-2 flex-wrap">
 					{data.genres.map((genre, index) => (
 						<Badge
 							key={index}
-							className="px-2 text-sm bg-black/70 border border-neutral-100 backdrop-blur-xs"
+							className="px-2 text-sm bg-black/80  backdrop-blur-xs"
 						>
 							<p>{genre.name}</p>
 						</Badge>
