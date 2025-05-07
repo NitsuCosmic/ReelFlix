@@ -25,8 +25,8 @@ const useMediaCardContext = () => {
 export const MediaCard = ({ children, media }: MediaCardProps) => {
 	return (
 		<MediaCardContext.Provider value={{ media }}>
-			<Card className="group relative p-0 overflow-hidden bg-transparent border-none shadow-none rounded-md lg:rounded-none hover:brightness-100 select-none max-w-[260px]">
-				<CardContent className="p-0 min-h-full">
+			<Card className="group relative p-0 min-h-full min-w-full overflow-hidden bg-transparent border-none shadow-none rounded-md lg:rounded-none hover:brightness-100 select-none max-w-[320px]">
+				<CardContent className="flex flex-col p-0 w-full h-full">
 					<NavLink
 						to={`/${media.media_type === "tv" ? "series" : "movies"}/${
 							media.id
@@ -99,15 +99,15 @@ MediaCard.Poster = function MediaCardPoster() {
 	const { media } = useMediaCardContext();
 
 	return (
-		<picture>
+		<div>
 			<img
 				src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${media.poster_path}`}
 				alt={`${media.title || media.name}'s Poster`}
 				title={media.title || media.name}
 				loading="lazy"
-				className="w-full object-cover rounded-lg text-neutral-100"
+				className="w-full h-full object-cover rounded-lg text-neutral-100"
 			/>
-		</picture>
+		</div>
 	);
 };
 
