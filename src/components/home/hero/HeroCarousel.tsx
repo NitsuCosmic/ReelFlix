@@ -37,7 +37,7 @@ export const HeroCarousel = ({
 
 	return (
 		<Carousel
-			className="relative flex gap-2"
+			className="relative flex"
 			opts={{
 				align: "start",
 				loop: true,
@@ -52,11 +52,11 @@ export const HeroCarousel = ({
 					<CarouselNext className="cursor-pointer text-neutral-950" />
 				</div>
 			</div>
-			<CarouselContent className="flex -ml-0">
+			<CarouselContent className="flex gap-2 ml-0">
 				{mediaList.map((media, index) => (
 					<CarouselItem
 						key={media.id}
-						className={`basis-1/3 md:basis-1/4 lg:basis-1/8 2xl:basis-1/10 p-0 mr-4 cursor-pointer border-2 border-transparent ${
+						className={`basis-1/3 md:basis-1/4 lg:basis-1/8 2xl:basis-1/10 p-0 cursor-pointer border-2 border-transparent ${
 							currentIndex === index ? "border-neutral-100" : ""
 						} rounded-md overflow-hidden`}
 						onClick={() => setCurrentIndex(index)}

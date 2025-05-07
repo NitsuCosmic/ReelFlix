@@ -25,7 +25,7 @@ export const EpisodeCard = ({ episode }) => {
 					<img
 						src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.still_sizes.original}${episode.still_path}`}
 						alt="Episode Image"
-						className="rounded-2xl w-full h-full object-cover"
+						className="rounded-2xl w-full h-full object-cover aspect-video"
 					/>
 					<div className="absolute inset-0 flex justify-end items-end p-2">
 						{episode.runtime && (

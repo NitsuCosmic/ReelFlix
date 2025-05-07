@@ -12,7 +12,7 @@ type MovieCastProps = {
 };
 
 export const MediaCast = ({ credits }: MovieCastProps) => {
-	const directors = credits.cast.filter(
+	const directors = credits.crew.filter(
 		(person) => person.known_for_department === "Directing"
 	);
 

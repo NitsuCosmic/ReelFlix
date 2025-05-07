@@ -35,7 +35,7 @@ export const HeroDisplay = () => {
 						</h1>
 						<div className="flex items-center gap-2 flex-wrap">
 							{mediaList[currentIndex].genre_ids?.map((genre, index) => (
-								<Badge key={index} className="px-2 text-sm">
+								<Badge key={index} className="px-2 text-sm bg-black/70">
 									{getMediaGenre(mediaList[currentIndex].media_type, genre)}
 								</Badge>
 							))}

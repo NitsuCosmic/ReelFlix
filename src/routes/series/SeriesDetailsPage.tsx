@@ -12,13 +12,10 @@ import { SeriesEpisodes } from "./SeriesEpisodes";
 export const SeriesDetailsPage = () => {
 	const { id } = useParams();
 	const { data, isLoading } = useSeriesDetails(id);
-	console.log(data);
 
 	if (isLoading) return <LoadingPage />;
 
 	if (!data) return null;
-
-	console.log(data);
 
 	return (
 		<div className="relative font-raleway">
