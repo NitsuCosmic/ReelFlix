@@ -16,5 +16,8 @@ export const ENDPOINTS = {
   },
   series: {
     details: "tv"
+  },
+  search: {
+    multi: "search/multi"
   }
 }

@@ -1,5 +1,5 @@
+import { SearchIcon } from "lucide-react";
 import { NavLink } from "react-router";
-import { Searchbar } from "./Searchbar";
 
 export const Navbar = () => {
 	return (
@@ -20,7 +20,14 @@ export const Navbar = () => {
 					</li>
 				</ul>
 			</nav>
-			<Searchbar />
+			<button
+				className="cursor-pointer z-10
+			"
+			>
+				<NavLink to={"explore"}>
+					<SearchIcon />
+				</NavLink>
+			</button>
 		</header>
 	);
 };

@@ -61,10 +61,11 @@ export const SeriesEpisodes = ({ seriesId, numberOfSeasons }) => {
 			</div>
 			{season && (
 				<Carousel
-					className="relative flex gap-2 select-none"
+					className="relative flex  select-none"
 					opts={{
 						align: "start",
 						startIndex: 0,
+						skipSnaps: true,
 					}}
 				>
 					<CarouselContent className="flex -ml-0 space-x-4">

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
 import { RootLayout } from "./routes/RootLayout.tsx";
+import { ExplorePage } from "./routes/explore/ExplorePage.tsx";
 import { HomePage } from "./routes/home/HomePage.tsx";
 import { MovieDetailsPage } from "./routes/movies/MovieDetailsPage.tsx";
 import { MoviesPage } from "./routes/movies/MoviesPage.tsx";
@@ -27,6 +28,9 @@ createRoot(document.getElementById("root")!).render(
 					<Route path="series">
 						<Route index element={<SeriesPage />} />
 						<Route path=":id" element={<SeriesDetailsPage />} />
+					</Route>
+					<Route path="explore">
+						<Route index element={<ExplorePage />} />
 					</Route>
 				</Route>
 			</Routes>
