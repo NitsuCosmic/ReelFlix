@@ -43,6 +43,8 @@ export const ExplorePage = () => {
 		}
 	};
 
+	console.log(results);
+
 	return (
 		<div className="min-h-screen bg-gray-950 font-raleway py-24 px-2">
 			<div className="text-center mb-10">
