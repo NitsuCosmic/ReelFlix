@@ -5,7 +5,10 @@ export const ENDPOINTS = {
     series: "discover/tv"
   },
   trending: {
-    all: "trending/all/week"
+    all: {
+      week: "trending/all/week",
+      day: "trending/all/day"
+    }
   },
   movies: {
     now_playing: "movie/now_playing",
@@ -19,5 +22,5 @@ export const ENDPOINTS = {
   },
   search: {
     multi: "search/multi"
-  }
+  },
 }

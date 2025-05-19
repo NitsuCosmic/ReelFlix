@@ -56,7 +56,7 @@ export const HeroCarousel = ({
 				{mediaList.map((media, index) => (
 					<CarouselItem
 						key={media.id}
-						className={`basis-1/3 md:basis-1/4 lg:basis-1/8 2xl:basis-1/10 p-0 cursor-pointer border-2 border-transparent ${
+						className={`min-h-[12rem] basis-1/3 md:basis-1/4 lg:basis-1/8 2xl:basis-1/10 p-0 cursor-pointer border-2 border-transparent ${
 							currentIndex === index ? "border-neutral-100" : ""
 						} rounded-md overflow-hidden`}
 						onClick={() => setCurrentIndex(index)}

@@ -23,7 +23,7 @@ export const MediaCarousel = ({
 
 	return (
 		<div>
-			<h3 className="text-xl mb-2 uppercase">{title || "No title"}</h3>
+			<h3 className="text-xl uppercase">{title || "No title"}</h3>
 			<Carousel
 				className="relative flex gap-2"
 				opts={{

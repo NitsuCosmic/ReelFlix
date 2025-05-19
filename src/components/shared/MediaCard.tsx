@@ -117,15 +117,14 @@ MediaCard.ResImage = function MediaCardResImage() {
 	return (
 		<picture>
 			<source
-				media="(min-width: 1024px)"
-				srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${media.backdrop_path}`}
-				title={media.title || media.name}
+				media="(max-width: 1023px)"
+				srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${media.poster_path}`}
 			/>
 			<img
-				src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${media.poster_path}`}
-				alt={`${media.title || media.name}'s Poster`}
+				src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${media.backdrop_path}`}
 				title={media.title || media.name}
 				loading="lazy"
+				className="rounded-lg"
 			/>
 		</picture>
 	);

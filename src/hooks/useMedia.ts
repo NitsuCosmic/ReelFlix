@@ -9,7 +9,7 @@ export const useMedia = () => {
   const fetchMedia = async () => {
     try {
       const response = await fetch(
-        `${ENDPOINTS.base_url}${ENDPOINTS.trending.all}`,
+        `${ENDPOINTS.base_url}${ENDPOINTS.trending.all.day}`,
         OPTIONS
       );
       const data = await response.json();

@@ -10,11 +10,11 @@ export const PageBackground = ({ data }: PageBackgroundProps) => {
 		<div className="fixed z-0 mx-auto w-full md:w-screen h-screen overflow-hidden max-w-[1920px]">
 			<picture>
 				<source
-					srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${data.backdrop_path}`}
-					media="(min-width: 1024px)"
+					srcSet={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${data.poster_path}`}
+					media="(max-width: 1023px)"
 				/>
 				<img
-					src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.poster_sizes.original}${data.poster_path}`}
+					src={`${TMDB_IMAGE_CONFIG.base_url}${TMDB_IMAGE_CONFIG.backdrop_sizes.original}${data.backdrop_path}`}
 					alt={data.title}
 					className="w-full h-full object-cover"
 				/>
